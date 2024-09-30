@@ -5,13 +5,16 @@ import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <>
+      {inputValue && console.log(inputValue)}
       <div
         className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
       >
-        <SearchBar />
+        <SearchBar setInputValue={setInputValue} />
         <CurrentDayWeather />
 
         {/* <img
