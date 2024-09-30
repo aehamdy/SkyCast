@@ -1,13 +1,15 @@
 import "./App.css";
 import House from "../public/house.png";
+import CurrentDayWeather from "./components/CurrentDayWeather";
 
 function App() {
   return (
     <>
       <div
-        className="realtive h-screen bg-no-repeat bg-center"
+        className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
       >
+        <CurrentDayWeather />
         <img
           src={House}
           alt="house-image"
