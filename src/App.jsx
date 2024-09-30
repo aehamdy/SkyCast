@@ -1,6 +1,7 @@
 import "./App.css";
 import House from "../public/house.png";
 import CurrentDayWeather from "./components/CurrentDayWeather";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
       >
+        <SearchBar />
         <CurrentDayWeather />
         <img
           src={House}
