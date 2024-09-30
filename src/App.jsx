@@ -6,18 +6,30 @@ import SearchBar from "./components/SearchBar";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
+  const [status, setStatus] = useState({});
 
-  const myFunc = () => {
-    console.log(inputValue);
+  const API = {
+    key: "12085e4560bb86e46adfb492790ddf68",
+    base: "https://api.openweathermap.org/data/2.5/weather?q=",
+  };
+
+  const getWeatherData = () => {
+    fetch(`${API.base}${inputValue}&appid=${API.key}&units=metric`)
+      .then((response) => response.json())
+      .then((result) => setStatus(result));
   };
 
   return (
     <>
+      {console.log(status)}
       <div
         className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
       >
-        <SearchBar setInputValue={setInputValue} myFunc={myFunc} />
+        <SearchBar
+          setInputValue={setInputValue}
+          getWeatherData={getWeatherData}
+        />
         <CurrentDayWeather />
 
         {/* <img
