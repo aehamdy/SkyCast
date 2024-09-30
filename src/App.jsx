@@ -7,14 +7,17 @@ import SearchBar from "./components/SearchBar";
 function App() {
   const [inputValue, setInputValue] = useState("");
 
+  const myFunc = () => {
+    console.log(inputValue);
+  };
+
   return (
     <>
-      {inputValue && console.log(inputValue)}
       <div
         className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
       >
-        <SearchBar setInputValue={setInputValue} />
+        <SearchBar setInputValue={setInputValue} myFunc={myFunc} />
         <CurrentDayWeather />
 
         {/* <img

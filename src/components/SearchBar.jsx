@@ -3,12 +3,12 @@ import SearchButton from "./SearchButton";
 import SearchInput from "./SearchInput";
 
 function SearchBar(props) {
-  const { setInputValue } = props;
+  const { setInputValue, myFunc } = props;
 
   return (
     <div className="relative w-56 mx-auto">
       <SearchInput setInputValue={setInputValue} />
-      <SearchButton />
+      <SearchButton myFunc={myFunc} />
     </div>
   );
 }
