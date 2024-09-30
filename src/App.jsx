@@ -1,5 +1,6 @@
+import { useState } from "react";
 import "./App.css";
-import House from "../public/house.png";
+// import House from "../public/house.png";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 
@@ -12,11 +13,12 @@ function App() {
       >
         <SearchBar />
         <CurrentDayWeather />
-        <img
+
+        {/* <img
           src={House}
           alt="house-image"
           className="absolute w-2/5 top-1/2 start-1/2 -translate-y-1/4 -translate-x-1/2"
-        />
+        /> */}
       </div>
     </>
   );
