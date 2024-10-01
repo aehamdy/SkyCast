@@ -13,15 +13,22 @@ function App() {
     base: "https://api.openweathermap.org/data/2.5/weather?q=",
   };
 
-  const getWeatherData = () => {
-    fetch(`${API.base}${inputValue}&appid=${API.key}&units=metric`)
-      .then((response) => response.json())
-      .then((result) => setStatus(result));
-  };
+  async function getWeatherData() {
+    try {
+      const response = await fetch(
+        `${API.base}${inputValue}&appid=${API.key}&units=metric`
+      );
+      const data = await response.json();
+      console.log(data);
+      setStatus(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <>
-      {console.log(status)}
+      {status.size > 0 && console.log(status)}
       <div
         className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
@@ -30,7 +37,7 @@ function App() {
           setInputValue={setInputValue}
           getWeatherData={getWeatherData}
         />
-        <CurrentDayWeather />
+        <CurrentDayWeather status={status} />
 
         {/* <img
           src={House}
