@@ -18,17 +18,20 @@ function App() {
       const response = await fetch(
         `${API.base}${inputValue}&appid=${API.key}&units=metric`
       );
+      if (!response.ok) {
+        throw new Error(`Request failed with status ` + response.status);
+      }
       const data = await response.json();
       console.log(data);
       setStatus(data);
     } catch (error) {
-      console.log(error);
+      console.log("Error:", error.message);
     }
   }
 
   return (
     <>
-      {status.size > 0 && console.log(status)}
+      {/* {status.size > 0 && console.log(status)} */}
       <div
         className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
