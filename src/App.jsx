@@ -5,7 +5,7 @@ import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState();
   const [status, setStatus] = useState({});
 
   const API = {
@@ -40,7 +40,10 @@ function App() {
           setInputValue={setInputValue}
           getWeatherData={getWeatherData}
         />
-        <CurrentDayWeather status={status} />
+        {console.log(status)}
+        {status && status.main && status.weather && (
+          <CurrentDayWeather status={status} />
+        )}
 
         {/* <img
           src={House}
