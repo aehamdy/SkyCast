@@ -6,7 +6,6 @@ import WeatherStatusDisplay from "./WeatherStatusDisplay";
 
 function CurrentDayWeather({ status }) {
   // const status = props;
-  console.log(status);
 
   return (
     status && (
@@ -14,7 +13,9 @@ function CurrentDayWeather({ status }) {
         {status.size > 0 && console.log(status)}
         <LocationNameDisplay cityName={status.name} />
         <TemperatureDisplay temp={status.main.temp} />
-        <WeatherStatusDisplay weatherStatus={status.weather[0].description} />
+        <WeatherStatusDisplay
+          weatherDescription={status.weather[0].description}
+        />
         <HumidityDisplay humidity={status.main.humidity} />
       </section>
     )
