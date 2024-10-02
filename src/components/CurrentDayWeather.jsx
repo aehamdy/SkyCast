@@ -7,7 +7,7 @@ import WeatherStatusDisplay from "./WeatherStatusDisplay";
 function CurrentDayWeather({ status }) {
   return (
     status && (
-      <section className="text-white">
+      <section className="font-dosis text-white">
         {status.size > 0 && console.log(status)}
         <LocationNameDisplay cityName={status.name} />
         <TemperatureDisplay temp={status.main.temp} />
