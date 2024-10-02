@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import FeelsLikeDisplay from "./FeelsLikeDisplay";
 import HumidityDisplay from "./HumidityDisplay";
 import LocationNameDisplay from "./LocationNameDisplay";
 import MinMaxTempDisplay from "./MinMaxTempDisplay";
@@ -14,15 +15,16 @@ function CurrentDayWeather({ status }) {
         <div>
           <LocationNameDisplay cityName={status.name} />
           <TemperatureDisplay temp={status.main.temp} />
+          <FeelsLikeDisplay feelsLike={status.main.feels_like} />
           <WeatherStatusDisplay
             weatherDescription={status.weather[0].description}
           />
           {/* {console.log(status)} */}
+          <HumidityDisplay humidity={status.main.humidity} />
           <MinMaxTempDisplay
             minTemp={status.main.temp_min}
             maxTemp={status.main.temp_max}
           />
-          <HumidityDisplay humidity={status.main.humidity} />
         </div>
         <div>
           <WeatherIcon weatherDescription={status.weather[0].main} />
