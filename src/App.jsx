@@ -4,30 +4,13 @@ import "./App.css";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 
+const API = {
+  key: "12085e4560bb86e46adfb492790ddf68",
+  base: "https://api.openweathermap.org/data/2.5/weather?q=",
+};
+
 function App() {
-  const [inputValue, setInputValue] = useState();
   const [status, setStatus] = useState({});
-
-  const API = {
-    key: "12085e4560bb86e46adfb492790ddf68",
-    base: "https://api.openweathermap.org/data/2.5/weather?q=",
-  };
-
-  async function getWeatherData() {
-    try {
-      const response = await fetch(
-        `${API.base}${inputValue}&appid=${API.key}&units=metric`
-      );
-      if (!response.ok) {
-        throw new Error(`Request failed with status ` + response.status);
-      }
-      const data = await response.json();
-      console.log(data);
-      setStatus(data);
-    } catch (error) {
-      console.log("Error:", error.message);
-    }
-  }
 
   return (
     <>
@@ -36,10 +19,7 @@ function App() {
         className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
       >
-        <SearchBar
-          setInputValue={setInputValue}
-          getWeatherData={getWeatherData}
-        />
+        <SearchBar setStatus={setStatus} API={API} />
         {console.log(status)}
         {status && status.main && status.weather && (
           <CurrentDayWeather status={status} />
@@ -56,3 +36,14 @@ function App() {
 }
 
 export default App;
+
+/**
+TODO:
+[ ] validate input field and show error messages for the user when the input field is invalid/empty and when no response
+[ ] make sure to show city name as expected (first letter of each word is capitalized and rest of the word is in small case)
+[ ] show the proper weather icon depending on weather condition
+[ ] create a component for the next seven days
+[ ] create a card component for each day of the seven days
+[ ] make the seven days component to be toggelabel (show/hide)
+[ ] 
+ */

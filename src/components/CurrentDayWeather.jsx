@@ -5,8 +5,6 @@ import TemperatureDisplay from "./TemperatureDisplay";
 import WeatherStatusDisplay from "./WeatherStatusDisplay";
 
 function CurrentDayWeather({ status }) {
-  // const status = props;
-
   return (
     status && (
       <section className="text-white">
