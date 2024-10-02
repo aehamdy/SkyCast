@@ -4,15 +4,15 @@ import SearchButton from "./SearchButton";
 import SearchInput from "./SearchInput";
 
 function SearchBar(props) {
-  const { setStatus, API } = props;
+  const { setStatus, API, setErrorMessage } = props;
 
   const [inputValue, setInputValue] = useState();
 
   const validateInputValue = () => {
     if (inputValue === "") {
-      console.log("Input field cannot be empty");
+      setErrorMessage("Input field cannot be empty");
     } else if (/\d/.test(inputValue)) {
-      console.log("City names cannot contain numbers!");
+      setErrorMessage("City names cannot contain numbers!");
     } else {
       getWeatherData();
     }
@@ -24,6 +24,7 @@ function SearchBar(props) {
         `${API.base}${inputValue}&appid=${API.key}&units=metric`
       );
       if (!response.ok) {
+        setErrorMessage(`Request failed.\nPlease check the entered value.`);
         throw new Error(`Request failed with status ` + response.status);
       }
       const data = await response.json();
