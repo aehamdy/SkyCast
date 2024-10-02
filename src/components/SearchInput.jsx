@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 function SearchInput({ setInputValue }) {
   const handleInputValue = (e) => {
-    setInputValue(e.target.value);
+    const value = e.target.value.trim();
+    setInputValue(value);
   };
 
   return (

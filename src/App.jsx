@@ -46,6 +46,7 @@ export default App;
 TODO:
 [x] validate input field and show error messages for the user when the input field is invalid/empty and when no response
 [x] make sure to show city name as expected (first letter of each word is capitalized and rest of the word is in small case)
+[x] remove white spaces from user input when click on search button
 [ ] show the proper weather icon depending on weather condition
 [ ] create a component for the next seven days
 [ ] create a card component for each day of the seven days
