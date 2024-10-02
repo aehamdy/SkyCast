@@ -9,6 +9,9 @@ function SearchBar(props) {
   const [inputValue, setInputValue] = useState();
 
   const validateInputValue = () => {
+    setStatus({});
+    setErrorMessage("");
+
     if (inputValue === "") {
       setErrorMessage("Input field cannot be empty");
     } else if (/\d/.test(inputValue)) {
@@ -24,14 +27,14 @@ function SearchBar(props) {
         `${API.base}${inputValue}&appid=${API.key}&units=metric`
       );
       if (!response.ok) {
-        setErrorMessage(`Request failed.\nPlease check the entered value.`);
         throw new Error(`Request failed with status ` + response.status);
       }
       const data = await response.json();
       console.log(data);
       setStatus(data);
     } catch (error) {
-      console.log("Error:", error.message);
+      setErrorMessage(`Request failed.\nPlease check the entered value.`);
+      // console.log("Error:", error.message);
     }
   }
 
