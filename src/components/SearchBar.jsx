@@ -32,7 +32,7 @@ function SearchBar(props) {
       }
 
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       setStatus(data);
 
       const lat = data.coord.lat; //get latitude of country
@@ -56,7 +56,7 @@ function SearchBar(props) {
       }
       const data = await response.json();
       setNextFiveDays(data.list);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.log(error.message);
     }
