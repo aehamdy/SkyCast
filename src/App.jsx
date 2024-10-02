@@ -17,15 +17,17 @@ function App() {
   return (
     <>
       <div
-        className="realtive h-screen bg-no-repeat bg-center pt-10"
+        className="flex flex-col items-center realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
       >
-        <SearchBar
-          setStatus={setStatus}
-          API={API}
-          setErrorMessage={setErrorMessage}
-        />
-        <ErrorMessage errorMessage={errorMessage} />
+        <div>
+          <SearchBar
+            setStatus={setStatus}
+            API={API}
+            setErrorMessage={setErrorMessage}
+          />
+          <ErrorMessage errorMessage={errorMessage} />
+        </div>
         {status && status.main && status.weather && (
           <CurrentDayWeather status={status} />
         )}
