@@ -30,7 +30,6 @@ function SearchBar(props) {
         throw new Error(`Request failed with status ` + response.status);
       }
       const data = await response.json();
-      console.log(data);
       setStatus(data);
     } catch (error) {
       setErrorMessage(`Request failed.\nPlease check the entered value.`);
