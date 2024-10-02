@@ -7,7 +7,6 @@ function WeatherStatusDisplay({ weatherDescription }) {
 
   return (
     <div>
-      {console.log(weatherDescription)}
       <p>{weatherStatus}</p>
     </div>
   );

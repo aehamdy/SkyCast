@@ -16,7 +16,7 @@ function CurrentDayWeather({ status }) {
           <WeatherStatusDisplay
             weatherDescription={status.weather[0].description}
           />
-          {console.log(status)}
+          {/* {console.log(status)} */}
           <HumidityDisplay humidity={status.main.humidity} />
         </div>
         <div>
