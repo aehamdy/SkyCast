@@ -3,6 +3,7 @@ import "./App.css";
 // import House from "../public/house.png";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
+import ErrorMessage from "./components/ErrorMessage";
 
 const API = {
   key: "12085e4560bb86e46adfb492790ddf68",
@@ -14,13 +15,12 @@ function App() {
 
   return (
     <>
-      {/* {status.size > 0 && console.log(status)} */}
       <div
         className="realtive h-screen bg-no-repeat bg-center pt-10"
         style={{ backgroundImage: "url('/starry-night.png')" }}
       >
         <SearchBar setStatus={setStatus} API={API} />
-        {console.log(status)}
+        <ErrorMessage />
         {status && status.main && status.weather && (
           <CurrentDayWeather status={status} />
         )}
