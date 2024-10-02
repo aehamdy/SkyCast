@@ -37,7 +37,7 @@ function SearchBar(props) {
   return (
     <div className="relative w-56 mx-auto">
       <SearchInput setInputValue={setInputValue} />
-      <SearchButton />
+      <SearchButton validateInputValue={validateInputValue} />
     </div>
   );
 }
