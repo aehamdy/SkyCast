@@ -2,7 +2,7 @@
 function TemperatureDisplay({ temp }) {
   const temperature = Math.trunc(temp);
 
-  return <p>{`${temperature}\u00b0 C`}</p>;
+  return <p className="text-6xl">{`${temperature}\u00b0`}</p>;
 }
 
 export default TemperatureDisplay;

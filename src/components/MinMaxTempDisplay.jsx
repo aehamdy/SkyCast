@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 function MinMaxTempDisplay({ minTemp, maxTemp }) {
   return (
-    <p className="flex gap-3">
-      <span>{`Low: ${Math.trunc(minTemp)}\u00b0`}</span>
-      <span>{`Max: ${Math.trunc(maxTemp)}\u00b0`}</span>
+    <p className="flex justify-around font-medium">
+      <span>{`Max: ${Math.ceil(maxTemp)}\u00b0`}</span>
+      <span>{`Min: ${Math.floor(minTemp)}\u00b0`}</span>
     </p>
   );
 }

@@ -7,7 +7,7 @@ function WeatherStatusDisplay({ weatherDescription }) {
 
   return (
     <div>
-      <p>{weatherStatus}</p>
+      <p className="font-medium text-xl text-[#c2c2cf]">{weatherStatus}</p>
     </div>
   );
 }
