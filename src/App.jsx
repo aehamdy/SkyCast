@@ -12,6 +12,7 @@ const API = {
 
 function App() {
   const [status, setStatus] = useState({});
+  const [nextFiveDays, setNextFiveDays] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
 
   return (
@@ -23,6 +24,7 @@ function App() {
         <div>
           <SearchBar
             setStatus={setStatus}
+            setNextFiveDays={setNextFiveDays}
             API={API}
             setErrorMessage={setErrorMessage}
           />
