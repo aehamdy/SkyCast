@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function WeatherIcon({ weatherDescription }) {
+function WeatherIcon({ weatherDescription, iconSize }) {
   const sunny = "/weather-sunny.png";
   const foggy = "/weather-foggy.png";
   const rainy = "/weather-rain.png";
@@ -47,7 +47,7 @@ function WeatherIcon({ weatherDescription }) {
 
   return (
     <div>
-      <img src={weatherIcon} alt="weather image" width="70" />
+      <img src={weatherIcon} alt="weather image" width={iconSize} />
     </div>
   );
 }

@@ -1,8 +1,19 @@
 /* eslint-disable react/prop-types */
-function WeatherTemperature({ temp }) {
-  const temperature = Math.trunc(temp);
+function WeatherTemperature({ temp, CSymbol, fontSize }) {
+  const formatTemp = () => {
+    const initValue = Math.trunc(temp);
+    const value = `${initValue}\u00b0`;
+    return value;
+  };
 
-  return <p className="text-6xl">{`${temperature}\u00b0`}</p>;
+  const temperature = formatTemp();
+
+  return (
+    <div className={`flex text-${fontSize}`}>
+      <p className={`font-medium `}>{`${temperature}`}</p>
+      <p>{`${CSymbol ? "C" : ""}`}</p>
+    </div>
+  );
 }
 
 export default WeatherTemperature;
