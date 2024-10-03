@@ -4,7 +4,7 @@ import SearchButton from "./SearchButton";
 import SearchInput from "./SearchInput";
 
 function SearchBar(props) {
-  const { setStatus, setNextDaysWeather, API, setErrorMessage } = props;
+  const { setStatus, setNextDaysData, API, setErrorMessage } = props;
 
   const [inputValue, setInputValue] = useState("");
 
@@ -55,7 +55,7 @@ function SearchBar(props) {
         throw new Error(`Error: ` + response.status);
       }
       const data = await response.json();
-      setNextDaysWeather(data.list);
+      setNextDaysData(data);
       console.log(data);
     } catch (error) {
       console.log(error.message);

@@ -4,7 +4,7 @@ import "./App.css";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 import ErrorMessage from "./components/ErrorMessage";
-import NextDaysWeather from "./components/NextDaysWeather";
+import NextDaysWeatherList from "./components/NextDaysWeatherList";
 
 const API = {
   key: "12085e4560bb86e46adfb492790ddf68",
@@ -13,7 +13,7 @@ const API = {
 
 function App() {
   const [status, setStatus] = useState({});
-  const [nextDaysWeather, setNextDaysWeather] = useState({});
+  const [nextDaysData, setNextDaysData] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
 
   return (
@@ -25,7 +25,7 @@ function App() {
         <div>
           <SearchBar
             setStatus={setStatus}
-            setNextDaysWeather={setNextDaysWeather}
+            setNextDaysData={setNextDaysData}
             API={API}
             setErrorMessage={setErrorMessage}
           />
@@ -35,9 +35,7 @@ function App() {
           <CurrentDayWeather status={status} />
         )}
 
-        {nextDaysWeather && (
-          <NextDaysWeather nextDaysWeather={nextDaysWeather} />
-        )}
+        {nextDaysData && <NextDaysWeatherList nextDaysData={nextDaysData} />}
 
         {/* <img
           src={House}
