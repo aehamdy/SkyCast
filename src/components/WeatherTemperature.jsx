@@ -9,7 +9,7 @@ function WeatherTemperature({ temp, CSymbol, fontSize }) {
   const temperature = formatTemp();
 
   return (
-    <div className={`flex text-${fontSize}`}>
+    <div className={`flex`} style={{ fontSize }}>
       <p>{`${temperature}`}</p>
       <p>{`${CSymbol ? "C" : ""}`}</p>
     </div>

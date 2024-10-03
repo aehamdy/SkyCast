@@ -16,7 +16,7 @@ function CurrentDayWeather({ status }) {
           <WeatherTemperature
             temp={status.main.temp}
             CSymbol={true}
-            fontSize="6xl"
+            fontSize="3.75rem"
           />
           {/* <FeelsLikeDisplay feelsLike={status.main.feels_like} /> */}
           <WeatherStatus weatherDescription={status.weather[0].description} />

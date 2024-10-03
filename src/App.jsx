@@ -4,7 +4,6 @@ import "./App.css";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 import ErrorMessage from "./components/ErrorMessage";
-import DailyForecastList from "./components/DailyForecastList";
 import Forecast from "./components/Forecast";
 
 const API = {
