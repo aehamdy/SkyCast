@@ -4,7 +4,7 @@ import SearchButton from "./SearchButton";
 import SearchInput from "./SearchInput";
 
 function SearchBar(props) {
-  const { setStatus, setNextFiveDays, API, setErrorMessage } = props;
+  const { setStatus, setNextDaysWeather, API, setErrorMessage } = props;
 
   const [inputValue, setInputValue] = useState("");
 
@@ -32,7 +32,7 @@ function SearchBar(props) {
       }
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setStatus(data);
 
       const lat = data.coord.lat; //get latitude of country
@@ -55,8 +55,8 @@ function SearchBar(props) {
         throw new Error(`Error: ` + response.status);
       }
       const data = await response.json();
-      setNextFiveDays(data.list);
-      // console.log(data);
+      setNextDaysWeather(data.list);
+      console.log(data);
     } catch (error) {
       console.log(error.message);
     }

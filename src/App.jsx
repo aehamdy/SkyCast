@@ -4,6 +4,7 @@ import "./App.css";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 import ErrorMessage from "./components/ErrorMessage";
+import NextDaysWeather from "./components/NextDaysWeather";
 
 const API = {
   key: "12085e4560bb86e46adfb492790ddf68",
@@ -12,7 +13,7 @@ const API = {
 
 function App() {
   const [status, setStatus] = useState({});
-  const [nextFiveDays, setNextFiveDays] = useState({});
+  const [nextDaysWeather, setNextDaysWeather] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
 
   return (
@@ -24,7 +25,7 @@ function App() {
         <div>
           <SearchBar
             setStatus={setStatus}
-            setNextFiveDays={setNextFiveDays}
+            setNextDaysWeather={setNextDaysWeather}
             API={API}
             setErrorMessage={setErrorMessage}
           />
@@ -32,6 +33,10 @@ function App() {
         </div>
         {status && status.main && status.weather && (
           <CurrentDayWeather status={status} />
+        )}
+
+        {nextDaysWeather && (
+          <NextDaysWeather nextDaysWeather={nextDaysWeather} />
         )}
 
         {/* <img
