@@ -5,6 +5,7 @@ import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 import ErrorMessage from "./components/ErrorMessage";
 import DailyForecastList from "./components/DailyForecastList";
+import Forecast from "./components/Forecast";
 
 const API = {
   key: "12085e4560bb86e46adfb492790ddf68",
@@ -19,8 +20,8 @@ function App() {
   return (
     <>
       <div
-        className="flex flex-col items-center realtive h-screen bg-no-repeat bg-center pt-10"
-        style={{ backgroundImage: "url('/starry-night.png')" }}
+        className="flex flex-col justify-between items-center md:w-[330px] h-screen mx-auto pt-3 bg-no-repeat bg-center overflow-hidden"
+        style={{ backgroundImage: "url('/starry-night-2.jpg')" }}
       >
         <div>
           <SearchBar
@@ -35,7 +36,7 @@ function App() {
           <CurrentDayWeather status={status} />
         )}
         {/* {console.log(nextDaysData)} */}
-        {nextDaysData.list && <DailyForecastList nextDaysData={nextDaysData} />}
+        {nextDaysData.list && <Forecast nextDaysData={nextDaysData} />}
 
         {/* <img
           src={House}
