@@ -56,7 +56,7 @@ function SearchBar(props) {
       }
       const data = await response.json();
       setNextDaysData(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.log(error.message);
     }

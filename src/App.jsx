@@ -34,8 +34,10 @@ function App() {
         {status && status.main && status.weather && (
           <CurrentDayWeather status={status} />
         )}
-
-        {nextDaysData && <NextDaysWeatherList nextDaysData={nextDaysData} />}
+        {/* {console.log(nextDaysData)} */}
+        {nextDaysData.list && (
+          <NextDaysWeatherList nextDaysData={nextDaysData} />
+        )}
 
         {/* <img
           src={House}
