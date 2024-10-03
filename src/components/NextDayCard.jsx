@@ -8,11 +8,21 @@ function NextDayCard({ date, temp, description }) {
     const formattedDate = `${day}/${month}`;
     return formattedDate;
   };
+
+  const formatTemp = () => {
+    const initValue = Math.trunc(temp);
+    const value = `${initValue}\u00b0 C`;
+    return value;
+  };
+
+  const nextDayDate = formattedDate();
+  const nextDayTemp = formatTemp();
+
   return (
     <li className="flex flex-col gap-2">
-      <p>{formattedDate()}</p>
+      <p>{nextDayDate}</p>
       <img src="" alt="" />
-      <p>{`${temp}\u00b0 C`}</p>
+      <p>{nextDayTemp}</p>
     </li>
   );
 }
