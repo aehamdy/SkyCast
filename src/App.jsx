@@ -29,7 +29,7 @@ function App() {
             API={API}
             setErrorMessage={setErrorMessage}
           />
-          <ErrorMessage errorMessage={errorMessage} />
+          {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
         </div>
         {status && status.main && status.weather && (
           <CurrentDayWeather status={status} />
