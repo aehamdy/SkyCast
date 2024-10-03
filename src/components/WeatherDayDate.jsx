@@ -1,16 +1,16 @@
 /* eslint-disable react/prop-types */
 function WeatherDayDate({ date }) {
-  const formattedDate = () => {
-    const fullTime = date.split(" ");
-    const initDate = fullTime[0].split("-");
-    const month = initDate[1];
-    const day = initDate[2];
-    const formattedDate = `${day}/${month}`;
-    return formattedDate;
+  const getWeekday = () => {
+    const valueInMilliseconds = new Date(date * 1000);
+    const day = valueInMilliseconds.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+    const weekday = day.slice(0, 3);
+    return weekday;
   };
-  const dayDate = formattedDate();
+  const weekday = getWeekday();
 
-  return <p className={`font-normal text-sm`}>{dayDate}</p>;
+  return <p className={`font-normal text-sm`}>{weekday}</p>;
 }
 
 export default WeatherDayDate;
