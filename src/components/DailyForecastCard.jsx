@@ -1,3 +1,6 @@
+import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
+
 /* eslint-disable react/prop-types */
 const sunny = "/weather-sunny.png";
 const foggy = "/weather-foggy.png";
