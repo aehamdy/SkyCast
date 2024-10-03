@@ -11,8 +11,6 @@ function DailyForecastList({ nextDaysData }) {
   const filteredList = filterData();
   return (
     <ul className="flex justify-between items-center gap-2">
-      {console.log(filteredList)}
-      {console.log(nextDaysData.list)}
       {filteredList.map((item, i) => (
         <DailyForecastCard
           key={i}

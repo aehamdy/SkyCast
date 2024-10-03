@@ -11,7 +11,7 @@ function CurrentDayWeather({ status }) {
     status && (
       <section className="font-dosis flex flex-col items-center gap-4 text-white">
         {/* {status.size > 0 && console.log(status)} */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col items-center gap-2">
           <WeatherLocationName cityName={status.name} />
           <WeatherTemperature
             temp={status.main.temp}

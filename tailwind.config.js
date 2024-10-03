@@ -12,6 +12,7 @@ export default {
       colors: {
         'weather-card' : 'rgba(72, 49, 157, 0.2)',
         'weather-card-hover' : '#48319D',
+        ''
       }
     },
   },
