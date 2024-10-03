@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-function HumidityDisplay({ humidity }) {
+function WeatherHumidity({ humidity }) {
   return <p>H: {humidity}%</p>;
 }
 
-export default HumidityDisplay;
+export default WeatherHumidity;

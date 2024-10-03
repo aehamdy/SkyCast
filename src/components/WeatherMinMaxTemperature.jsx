@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function MinMaxTempDisplay({ minTemp, maxTemp }) {
+function WeatherMinMaxTemperature({ minTemp, maxTemp }) {
   return (
     <p className="flex gap-2 font-medium">
       <span>{`Max: ${Math.ceil(maxTemp)}\u00b0`}</span>
@@ -8,4 +8,4 @@ function MinMaxTempDisplay({ minTemp, maxTemp }) {
   );
 }
 
-export default MinMaxTempDisplay;
+export default WeatherMinMaxTemperature;

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function WeatherStatusDisplay({ weatherDescription }) {
+function WeatherStatus({ weatherDescription }) {
   const weatherStatus = weatherDescription
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -12,4 +12,4 @@ function WeatherStatusDisplay({ weatherDescription }) {
   );
 }
 
-export default WeatherStatusDisplay;
+export default WeatherStatus;

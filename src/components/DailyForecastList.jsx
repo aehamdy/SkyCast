@@ -1,7 +1,7 @@
-import NextDayCard from "./NextDayCard";
+import DailyForecastCard from "./DailyForecastCard";
 
 /* eslint-disable react/prop-types */
-function NextDaysWeatherList({ nextDaysData }) {
+function DailyForecastList({ nextDaysData }) {
   const filterData = () => {
     const filtered = nextDaysData.list.filter((item) =>
       item.dt_txt.includes("00:00:00")
@@ -10,11 +10,11 @@ function NextDaysWeatherList({ nextDaysData }) {
   };
   const filteredList = filterData();
   return (
-    <ul className="flex">
+    <ul className="flex justify-between items-center gap-2">
       {console.log(filteredList)}
       {console.log(nextDaysData.list)}
       {filteredList.map((item, i) => (
-        <NextDayCard
+        <DailyForecastCard
           key={i}
           date={item.dt_txt}
           temp={item.main.temp}
@@ -25,4 +25,4 @@ function NextDaysWeatherList({ nextDaysData }) {
   );
 }
 
-export default NextDaysWeatherList;
+export default DailyForecastList;

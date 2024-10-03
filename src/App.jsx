@@ -4,7 +4,7 @@ import "./App.css";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 import ErrorMessage from "./components/ErrorMessage";
-import NextDaysWeatherList from "./components/NextDaysWeatherList";
+import DailyForecastList from "./components/DailyForecastList";
 
 const API = {
   key: "12085e4560bb86e46adfb492790ddf68",
@@ -35,9 +35,7 @@ function App() {
           <CurrentDayWeather status={status} />
         )}
         {/* {console.log(nextDaysData)} */}
-        {nextDaysData.list && (
-          <NextDaysWeatherList nextDaysData={nextDaysData} />
-        )}
+        {nextDaysData.list && <DailyForecastList nextDaysData={nextDaysData} />}
 
         {/* <img
           src={House}

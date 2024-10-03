@@ -8,7 +8,7 @@ const stormy = "/weather-storm.png";
 const windy = "/weather-wind.png";
 const tornado = "/weather-tornado.png";
 
-function NextDayCard({ date, temp, description }) {
+function DailyForecastCard({ date, temp, description }) {
   const formattedDate = () => {
     const fullTime = date.split(" ");
     const initDate = fullTime[0].split("-");
@@ -63,7 +63,7 @@ function NextDayCard({ date, temp, description }) {
   const nextDayTemp = formatTemp();
 
   return (
-    <li className="flex flex-col gap-2">
+    <li className="flex flex-col items-center gap-2">
       <p>{nextDayDate}</p>
       <img src={weatherIcon} alt="weather image" width="17" />
       <p>{nextDayTemp}</p>
@@ -71,4 +71,4 @@ function NextDayCard({ date, temp, description }) {
   );
 }
 
-export default NextDayCard;
+export default DailyForecastCard;

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-function LocationNameDisplay({ cityName }) {
+function WeatherLocationName({ cityName }) {
   return (
     <h3 className="text-4xl font-thin tracking-wide">
       {cityName
@@ -9,4 +9,4 @@ function LocationNameDisplay({ cityName }) {
   );
 }
 
-export default LocationNameDisplay;
+export default WeatherLocationName;
