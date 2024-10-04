@@ -3,12 +3,16 @@ import DailyForecastCard from "./DailyForecastCard";
 /* eslint-disable react/prop-types */
 function DailyForecastList({ nextDaysData }) {
   const filterData = () => {
+    // console.log(nextDaysData);
     const filtered = nextDaysData.list.filter((item) =>
       item.dt_txt.includes("00:00:00")
     );
+
     return filtered;
   };
+
   const filteredList = filterData();
+
   return (
     <ul className="flex justify-between items-center gap-2">
       {console.log(filteredList)}
