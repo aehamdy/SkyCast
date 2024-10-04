@@ -60,6 +60,7 @@ TODO:
 [x] create a component for the next days
 [x] create a card component for each day of the seven days
 [ ] add two buttons in Forecast component (one to show next days forecast and the other to show hourly weather for current day)
+[ ] add "Enter" key functionality
 [ ] make Forecast component to be toggelable (show/hide)
 [ ] add animated cloud icon that appears right after any search button click which mimics loading data from the server
  */

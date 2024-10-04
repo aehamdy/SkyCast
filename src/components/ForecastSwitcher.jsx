@@ -1,21 +1,17 @@
+/* eslint-disable react/prop-types */
 import ForecastOptionButton from "./ForecastOptionButton";
 
-function ForecastSwitcher() {
-  const onButtonHandler = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.id);
-    console.log(e.target.value);
-  };
+function ForecastSwitcher({ onButtonHandler }) {
   return (
     <div>
       <ForecastOptionButton
         id="hourly-forecast"
-        value="Hourly"
+        value="hourly-forecast"
         onButtonHandler={onButtonHandler}
       />
       <ForecastOptionButton
         id="weekly-forecast"
-        value="Weekly"
+        value="weekly-forecast"
         onButtonHandler={onButtonHandler}
       />
     </div>
