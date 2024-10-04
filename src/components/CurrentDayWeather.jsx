@@ -9,7 +9,7 @@ import WeatherStatus from "./WeatherStatus";
 function CurrentDayWeather({ status }) {
   return (
     status && (
-      <section className="font-dosis flex flex-col items-center gap-4 text-white">
+      <section className="font-dosis flex flex-col items-center gap-2 text-white">
         {/* {status.size > 0 && console.log(status)} */}
         <div className="flex flex-col items-center gap-2">
           <WeatherLocationName cityName={status.name} />

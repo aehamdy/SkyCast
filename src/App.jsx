@@ -35,7 +35,9 @@ function App() {
           <CurrentDayWeather status={status} />
         )}
         {/* {console.log(nextDaysData)} */}
-        {nextDaysData.list && <Forecast nextDaysData={nextDaysData} />}
+        {nextDaysData.list && !errorMessage && (
+          <Forecast nextDaysData={nextDaysData} />
+        )}
 
         {/* <img
           src={House}
@@ -55,8 +57,8 @@ TODO:
 [x] make sure to show city name as expected (first letter of each word is capitalized and rest of the word is in small case)
 [x] remove white spaces from user input when click on search button
 [x] show the proper weather icon depending on weather condition
-[ ] create a component for the next seven days
-[ ] create a card component for each day of the seven days
+[x] create a component for the next days
+[x] create a card component for each day of the seven days
 [ ] make the seven days component to be toggelabel (show/hide)
 [ ] 
  */
