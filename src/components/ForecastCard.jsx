@@ -3,7 +3,7 @@ import WeatherDayDate from "./WeatherDayDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 
-function DailyForecastCard({ date, temp, description }) {
+function ForecastCard({ date, temp, description }) {
   return (
     <li className="flex text-lg flex-col justify-between items-center gap-4 h-36 py-4 px-2 text-white bg-weather-card rounded-3xl shadow-xl hover:bg-weather-card-hover hover:shadow-2xl duration-300">
       <WeatherDayDate date={date} />
@@ -13,4 +13,4 @@ function DailyForecastCard({ date, temp, description }) {
   );
 }
 
-export default DailyForecastCard;
+export default ForecastCard;

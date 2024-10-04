@@ -1,7 +1,7 @@
-import DailyForecastCard from "./DailyForecastCard";
-
 /* eslint-disable react/prop-types */
-function DailyForecastList({ nextDaysData }) {
+import ForecastCard from "./ForecastCard";
+
+function ForecastList({ nextDaysData }) {
   const filterData = () => {
     // console.log(nextDaysData);
     const filtered = nextDaysData.list.filter((item) =>
@@ -18,7 +18,7 @@ function DailyForecastList({ nextDaysData }) {
       {console.log(filteredList)}
 
       {filteredList.map((item, i) => (
-        <DailyForecastCard
+        <ForecastCard
           key={i}
           date={item.dt}
           temp={item.main.temp}
@@ -29,4 +29,4 @@ function DailyForecastList({ nextDaysData }) {
   );
 }
 
-export default DailyForecastList;
+export default ForecastList;
