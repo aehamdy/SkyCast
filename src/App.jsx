@@ -4,7 +4,7 @@ import "./App.css";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 import ErrorMessage from "./components/ErrorMessage";
-import Forecast from "./components/Forecast";
+import ForecastPanel from "./components/ForecastPanel";
 
 const API = {
   key: "12085e4560bb86e46adfb492790ddf68",
@@ -36,7 +36,7 @@ function App() {
         )}
         {/* {console.log(nextDaysData)} */}
         {nextDaysData.list && !errorMessage && (
-          <Forecast nextDaysData={nextDaysData} />
+          <ForecastPanel nextDaysData={nextDaysData} />
         )}
 
         {/* <img
@@ -59,6 +59,7 @@ TODO:
 [x] show the proper weather icon depending on weather condition
 [x] create a component for the next days
 [x] create a card component for each day of the seven days
-[ ] make the seven days component to be toggelabel (show/hide)
-[ ] 
+[ ] add two buttons in Forecast component (one to show next days forecast and the other to show hourly weather for current day)
+[ ] make Forecast component to be toggelable (show/hide)
+[ ] add animated cloud icon that appears right after any search button click which mimics loading data from the server
  */
