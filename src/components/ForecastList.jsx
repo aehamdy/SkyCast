@@ -2,15 +2,35 @@
 import ForecastCard from "./ForecastCard";
 
 function ForecastList({ nextDaysData, selectedOption }) {
-  const filterHourlyData = () => {
+  const getCurrentDate = () => {
     const d = new Date();
     const date = d.getDate() < 10 ? "0" + d.getDate() : d.getDate();
     const month = d.getMonth();
     const year = d.getFullYear();
     const currentDate = `${year}-${month + 1}-${date}`;
+    return currentDate;
+  };
+
+  const filterHourlyData = () => {
+    const currentDate = getCurrentDate();
+
     const filtered = nextDaysData.list.filter((item) =>
       item.dt_txt.split(" ")[0].includes(currentDate)
     );
+    // console.log(filtered);
+
+    // const formattedList = filtered[0].dt_txt
+    //   .split(" ")[0]
+    //   .split("-")
+    //   .slice(1)
+    //   .join("/");
+    // .slice(5)
+    // .replace("-", "/");
+    // const newFormatted = formattedList.join("");
+    // .replaceAll("-", "/");
+
+    // console.log(formattedList);
+
     return filtered;
   };
 
@@ -31,15 +51,13 @@ function ForecastList({ nextDaysData, selectedOption }) {
   return (
     <ul className="flex justify-between items-center gap-2">
       {/* {console.log(filteredList)} */}
+      {/* {console.log(filteredList[0].dt_txt.split(" ")[0].replaceAll("-") */}
 
       {filteredList.map((item, i) => (
         <ForecastCard
           key={i}
-          date={
-            selectedOption === "weekly-forecast"
-              ? item.dt
-              : item.dt_txt.split(" ")[0]
-          }
+          selectedOption={selectedOption}
+          date={selectedOption === "weekly-forecast" ? item.dt : item.dt_txt}
           temp={item.main.temp}
           description={item.weather[0].main}
         />
