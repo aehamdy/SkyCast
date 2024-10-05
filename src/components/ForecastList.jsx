@@ -46,6 +46,7 @@ function ForecastList({ nextDaysData, selectedOption }) {
           date={selectedOption === "weekly-forecast" ? item.dt : item.dt_txt}
           temp={item.main.temp}
           description={item.weather[0].main}
+          delay={i * 100}
         />
       ))}
     </ul>
