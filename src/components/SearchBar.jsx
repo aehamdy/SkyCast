@@ -32,7 +32,6 @@ function SearchBar(props) {
       }
 
       const data = await response.json();
-      // console.log(data);
       setStatus(data);
 
       const lat = data.coord.lat; //get latitude of country
@@ -41,11 +40,10 @@ function SearchBar(props) {
     } catch (error) {
       console.log(error.message);
       setErrorMessage(`Request failed.\nPlease check the entered value.`);
-      // console.log("Error:", error.message);
     }
   }
 
-  // function to get next five days weather
+  // function to get next five days weather (5 days are the maximum period for this API)
   const getNextFiveDays = async (lat, lon) => {
     const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=40&appid=${API.key}&units=metric`;
 
@@ -64,7 +62,10 @@ function SearchBar(props) {
 
   return (
     <div className="relative w-56 mx-auto">
-      <SearchInput setInputValue={setInputValue} />
+      <SearchInput
+        setInputValue={setInputValue}
+        validateInputValue={validateInputValue}
+      />
       <SearchButton validateInputValue={validateInputValue} />
     </div>
   );
