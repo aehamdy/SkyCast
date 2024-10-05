@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ForecastList from "./ForecastList";
 import ForecastSwitcher from "./ForecastSwitcher";
-import ForecastPanelTray from "./ForecastPanelTray";
+import ForecastPanelToggler from "./ForecastPanelToggler";
 
 function ForecastPanel({ nextDaysData }) {
   const [selectedOption, setSelectedOptionOption] = useState("hourly-forecast");
@@ -23,7 +23,7 @@ function ForecastPanel({ nextDaysData }) {
         isExpanded ? "h-[242px]" : "h-[28px]"
       } transition-all duration-300 ease-in-out delay-0`}
     >
-      <ForecastPanelTray togglePanel={togglePanel} isExpanded={isExpanded} />
+      <ForecastPanelToggler togglePanel={togglePanel} isExpanded={isExpanded} />
       <ForecastSwitcher onButtonHandler={onButtonHandler} />
       <ForecastList
         nextDaysData={nextDaysData}

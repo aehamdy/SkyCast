@@ -13,7 +13,7 @@ const arrowIcon = (
   </svg>
 );
 
-function ForecastPanelTray({ togglePanel, isExpanded }) {
+function ForecastPanelToggler({ togglePanel, isExpanded }) {
   return (
     <div
       onClick={togglePanel}
@@ -26,4 +26,4 @@ function ForecastPanelTray({ togglePanel, isExpanded }) {
   );
 }
 
-export default ForecastPanelTray;
+export default ForecastPanelToggler;
