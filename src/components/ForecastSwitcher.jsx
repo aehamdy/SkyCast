@@ -8,6 +8,7 @@ function ForecastSwitcher({ onButtonHandler }) {
         id="hourly-forecast"
         value="hourly-forecast"
         onButtonHandler={onButtonHandler}
+        defaultChecked
       />
       <ForecastOptionButton
         id="weekly-forecast"

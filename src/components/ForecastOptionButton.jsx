@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 function ForecastOptionButton(props) {
-  const { id, value, onButtonHandler } = props;
+  const { id, value, onButtonHandler, defaultChecked } = props;
 
   return (
     <div className="font-mono">
@@ -9,6 +9,7 @@ function ForecastOptionButton(props) {
         id={id}
         name="forecast-option"
         value={value}
+        defaultChecked={defaultChecked}
         onChange={(e) => onButtonHandler(e)}
         className="peer hidden"
       />
