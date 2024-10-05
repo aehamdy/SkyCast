@@ -2,9 +2,18 @@
 function WeatherDayDate({ selectedOption, date }) {
   const getFormattedTime = (val) => {
     const dateString = new Date(val);
-    const hours = dateString.getHours();
-    const fullTime = hours.toString().padStart(2, "0");
-    const endFormat = hours < 12 ? `${fullTime} AM` : `${fullTime} PM`;
+    let hours = dateString.getHours();
+
+    //format hours as HH
+    // const fullTime = hours.toString().padStart(2, "0")
+
+    const amPm = hours >= 12 ? "PM" : "AM";
+
+    //convert hours to 12 hours format
+    hours = hours % 12 || 12;
+
+    const endFormat = `${hours} ${amPm}`;
+
     return endFormat;
   };
 
