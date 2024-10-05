@@ -47,7 +47,12 @@ function WeatherIcon({ weatherDescription, iconSize }) {
 
   return (
     <div>
-      <img src={weatherIcon} alt="weather image" width={iconSize} />
+      <img
+        src={weatherIcon}
+        alt="weather image"
+        width={iconSize}
+        className="mt-1"
+      />
     </div>
   );
 }

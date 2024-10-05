@@ -37,7 +37,7 @@ function ForecastList({ nextDaysData, selectedOption }) {
 
   return (
     <ul
-      className={`flex justify-between items-center gap-2 px-3 py-4 overflow-hidden`}
+      className={`flex justify-evenly items-center gap-2 px-3 py-4 overflow-hidden`}
     >
       {filteredList.map((item, i) => (
         <ForecastCard
