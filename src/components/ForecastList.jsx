@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import ForecastCard from "./ForecastCard";
 
 function ForecastList({ nextDaysData, selectedOption }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const getCurrentDate = () => {
     const d = new Date();
     const date = d.getDate() < 10 ? "0" + d.getDate() : d.getDate();
@@ -48,8 +51,15 @@ function ForecastList({ nextDaysData, selectedOption }) {
       ? filterDailyData()
       : filterHourlyData();
 
+  // const toggleList = () => {
+  //   setIsExpanded((prevValue) => !prevValue);
+  // };
+
   return (
-    <ul className="flex justify-between items-center gap-2">
+    <ul
+      // onClick={toggleList}
+      className={`flex justify-between items-center gap-2 overflow-hidden`}
+    >
       {/* {console.log(filteredList)} */}
       {/* {console.log(filteredList[0].dt_txt.split(" ")[0].replaceAll("-") */}
 
