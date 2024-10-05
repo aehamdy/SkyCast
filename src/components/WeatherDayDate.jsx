@@ -1,37 +1,36 @@
 /* eslint-disable react/prop-types */
 function WeatherDayDate({ selectedOption, date }) {
-  const getMonthNDate = (val) => {
-    console.log(val);
-    const value = val
-      .split(" ")[0]
-      .replaceAll("-", "/")
-      .split("/")
-      .slice(1)
-      .join("/");
-    // .split("-").slice(1).join("/");
-    // console.log(value);
-    return value;
+  const getFormattedTime = (val) => {
+    const dateString = new Date(val);
+    const hours = dateString.getHours();
+    const fullTime = hours.toString().padStart(2, "0");
+    const endFormat = hours < 12 ? `${fullTime} AM` : `${fullTime} PM`;
+    return endFormat;
   };
 
-  const getWeekday = () => {
-    if (selectedOption === "weekly-forecast") {
-      const valueInMilliseconds = new Date(date * 1000);
-      const day = valueInMilliseconds.toLocaleDateString("en-US", {
-        weekday: "long",
-      });
+  const getWeekday = (val) => {
+    const valueInMilliseconds = new Date(val * 1000);
+    const day = valueInMilliseconds.toLocaleDateString("en-US", {
+      weekday: "long",
+    });
 
-      const weekday = day.slice(0, 3);
+    const weekday = day.slice(0, 3);
+    return weekday;
+  };
 
-      return weekday;
-    } else if (selectedOption === "hourly-forecast") {
-      const formattedDate = getMonthNDate(date);
-
-      console.log(formattedDate);
+  const getDesiredTime = () => {
+    if (selectedOption === "hourly-forecast") {
+      const formattedDate = getFormattedTime(date);
 
       return formattedDate;
+    } else if (selectedOption === "weekly-forecast") {
+      const weekday = getWeekday(date);
+
+      return weekday;
     }
   };
-  const weekday = getWeekday();
+
+  const weekday = getDesiredTime();
 
   return <p className={`font-normal text-sm`}>{weekday}</p>;
 }
