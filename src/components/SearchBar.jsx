@@ -5,7 +5,6 @@ import SearchInput from "./SearchInput";
 
 function SearchBar(props) {
   const { setStatus, setNextDaysData, API, setErrorMessage } = props;
-
   const [inputValue, setInputValue] = useState("");
 
   const validateInputValue = () => {

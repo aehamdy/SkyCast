@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeInUp: {
+          '0%': {opcaity: 0, transform: 'translateY(30px)'},
+          '100%': {opacity: 1, transform: 'translateY(0)'},
+        },
+      },
+      animation: {
+        fadeInUp: 'fadeInUp 0.5s ease-out',
+      },
       fontFamily: {
         dosis:['Dosis', 'sans-serif'],
       },

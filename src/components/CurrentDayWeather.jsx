@@ -9,7 +9,7 @@ import WeatherStatus from "./WeatherStatus";
 function CurrentDayWeather({ status }) {
   return (
     status && (
-      <section className="font-dosis flex flex-col items-center gap-2 text-white">
+      <section className="font-dosis flex flex-col items-center gap-2 text-white  animate-fadeInUp">
         <div className="flex flex-col items-center">
           <WeatherLocationName cityName={status.name} />
           <WeatherTemperature
@@ -17,7 +17,6 @@ function CurrentDayWeather({ status }) {
             CSymbol={true}
             fontSize="3.75rem"
           />
-          {/* <FeelsLikeDisplay feelsLike={status.main.feels_like} /> */}
           <WeatherStatus weatherDescription={status.weather[0].description} />
           <WeatherMinMaxTemperature
             minTemp={status.main.temp_min}

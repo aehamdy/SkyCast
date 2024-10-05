@@ -62,10 +62,7 @@ TODO:
 [x] add two buttons in Forecast component (one to show next days forecast and the other to show hourly weather for current day)
 [x] add "Enter" key functionality
 [x] make Forecast component to be toggelable (show/hide)
-[ ] change the background color of SearchButton
-[ ] change the position of Searchbar on medium and large screens
-[ ] re-order (reverse) the order of Searchbar, CurrentDayWeather and ForecastPanel on mobile screen
-[ ] add animation to CurrentDayWeather when appear/disappear
+[x] add animation to CurrentDayWeather when appears
 [ ] add animation to ForecastList when change between Hourly and Weekly
 [ ] add animated cloud icon that appears right after any search button click which mimics loading data from the server
 [ ] add drag functionality to arrow icon
