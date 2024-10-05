@@ -13,11 +13,13 @@ const arrowIcon = (
   </svg>
 );
 
-function ForecastPanelTray({ togglePanel }) {
+function ForecastPanelTray({ togglePanel, isExpanded }) {
   return (
     <div
       onClick={togglePanel}
-      className={`flex justify-center items-center transition-all duration-700 delay-150 cursor-pointer`}
+      className={`flex justify-center items-center ${
+        isExpanded && "rotate-180"
+      } transition-all duration-700 delay-150 cursor-pointer`}
     >
       {arrowIcon}
     </div>

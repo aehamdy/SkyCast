@@ -23,7 +23,7 @@ function ForecastPanel({ nextDaysData }) {
         isExpanded ? "h-[242px]" : "h-[28px]"
       } transition-all duration-300 ease-in-out delay-0`}
     >
-      <ForecastPanelTray togglePanel={togglePanel} />
+      <ForecastPanelTray togglePanel={togglePanel} isExpanded={isExpanded} />
       <ForecastSwitcher onButtonHandler={onButtonHandler} />
       <ForecastList
         nextDaysData={nextDaysData}
