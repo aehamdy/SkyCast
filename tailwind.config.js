@@ -10,6 +10,8 @@ export default {
         dosis:['Dosis', 'sans-serif'],
       },
       colors: {
+        'primary-text-color': '#fff',
+        'secondary-text-color': "rgb(194 194 207)",
         'weather-card' : 'rgba(72, 49, 157, 0.2)',
         'weather-card-hover' : '#48319D',
       },
