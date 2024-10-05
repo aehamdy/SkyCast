@@ -20,19 +20,6 @@ function ForecastList({ nextDaysData, selectedOption }) {
     const filtered = nextDaysData.list.filter((item) =>
       item.dt_txt.split(" ")[0].includes(currentDate)
     );
-    // console.log(filtered);
-
-    // const formattedList = filtered[0].dt_txt
-    //   .split(" ")[0]
-    //   .split("-")
-    //   .slice(1)
-    //   .join("/");
-    // .slice(5)
-    // .replace("-", "/");
-    // const newFormatted = formattedList.join("");
-    // .replaceAll("-", "/");
-
-    // console.log(formattedList);
 
     return filtered;
   };
@@ -58,7 +45,7 @@ function ForecastList({ nextDaysData, selectedOption }) {
   return (
     <ul
       // onClick={toggleList}
-      className={`flex justify-between items-center gap-2 overflow-hidden`}
+      className={`flex justify-between items-center gap-2 px-3 py-4 overflow-hidden`}
     >
       {/* {console.log(filteredList)} */}
       {/* {console.log(filteredList[0].dt_txt.split(" ")[0].replaceAll("-") */}

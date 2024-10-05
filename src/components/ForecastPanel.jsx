@@ -18,11 +18,16 @@ function ForecastPanel({ nextDaysData }) {
 
   return (
     <section
-      onClick={togglePanel}
-      className={`w-full p-5 rounded-t-3xl overflow-hidden bg-gradient-primary backdrop-blur-sm transition-all duration-300 ${
-        isExpanded ? "h-[224px]" : "h-[6%]"
-      } duration-700 ease-in-out delay-0`}
+      className={`w-full rounded-t-3xl overflow-hidden bg-gradient-primary backdrop-blur-sm ${
+        isExpanded ? "h-[242px]" : "h-[28px]"
+      } transition-all duration-300 ease-in-out delay-0`}
     >
+      <div
+        onClick={togglePanel}
+        className="flex justify-center items-center p-3 cursor-pointer"
+      >
+        <span className="w-[15%] h-1 rounded bg-slate-500"></span>
+      </div>
       <ForecastSwitcher onButtonHandler={onButtonHandler} />
       <ForecastList
         nextDaysData={nextDaysData}
