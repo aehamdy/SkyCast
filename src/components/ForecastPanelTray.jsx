@@ -14,7 +14,14 @@ const arrowIcon = (
 );
 
 function ForecastPanelTray({ togglePanel }) {
-  return <div onClick={togglePanel}>{arrowIcon}</div>;
+  return (
+    <div
+      onClick={togglePanel}
+      className={`flex justify-center items-center transition-all duration-700 delay-150 cursor-pointer`}
+    >
+      {arrowIcon}
+    </div>
+  );
 }
 
 export default ForecastPanelTray;
