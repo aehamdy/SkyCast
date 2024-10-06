@@ -3,7 +3,7 @@ import ForecastOptionButton from "./ForecastOptionButton";
 
 function ForecastSwitcher({ onButtonHandler }) {
   return (
-    <div className="flex justify-between w-full py-2 px-3.5 border-t-2 border-[#00000020] overflow-hidden">
+    <div className="flex justify-around w-full py-2 px-3.5 border-t-2 border-[#00000020] overflow-hidden">
       <ForecastOptionButton
         id="hourly-forecast"
         value="hourly-forecast"
