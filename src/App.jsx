@@ -9,7 +9,6 @@ import ForecastPanel from "./components/ForecastPanel";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 const API = {
-  // key: "12085e4560bb86e46adfb492790ddf68",
   key: apiKey,
   base: "https://api.openweathermap.org/data/2.5/weather?q=",
 };
