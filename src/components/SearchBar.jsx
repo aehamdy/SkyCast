@@ -26,8 +26,6 @@ function SearchBar(props) {
         `${API.base}${inputValue}&appid=${API.key}&units=metric`
       );
 
-      console.log(API.key);
-
       if (!response.ok) {
         throw new Error(`Request failed with status ` + response.status);
       }
