@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-// import House from "../public/house.png";
 import CurrentDayWeather from "./components/CurrentDayWeather";
 import SearchBar from "./components/SearchBar";
 import ErrorMessage from "./components/ErrorMessage";
